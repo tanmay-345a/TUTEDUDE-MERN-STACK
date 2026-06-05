@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+head{
+    font-family: "Karla" , sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+
+}
+.body{
+    overflow: hidden;
+  
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.left{
+    flex-basis:50%;
+    padding-left: 20px;
+}
+
+.right{
+    flex-basis: 50%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2faff;
+}
+.right h2{
+    padding-left: 40px;
+    color: #263238;
+    font-size: 35px;
+}
+
+.right p{
+    padding-left: 30px;
+    color: #5d6c79;
+    padding-bottom: 30px;
+
+}
+
+.logo img{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form{
+    color: #83929b;
+    font-size: 14px;
+}
+
+form a{
+    padding-left: 178px;
+    text-decoration: none;
+    color: #83929b;
+}
+
+form button{
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #11abff;
+    border: none;
+    color: white;
+    font-size: 17px;
+}
+input{
+    height: 35px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+}
+
+.grey{
+    padding-left: 70px;
+}
+
+.blue{
+    color: #639bf5;
+}
