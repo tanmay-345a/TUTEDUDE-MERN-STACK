@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+  position: relative;
+  min-height: 50px;
+  background: white;
+  padding: 15px 40px;
+  overflow: visible;
+}
+
+.logo {
+  float: left;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.desktop-links {
+  float: left;
+}
+
+.desktop-links a {
+  display: inline-block;
+  margin-left: 25px;
+  text-decoration: none;
+  color: gray;
+  font-size: 14px;
+}
+
+.username {
+  float: right;
+  background: #aec1dd;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.mobile-menu-control {
+  display: none;
+}
+
+.hamburger {
+  border: 0;
+  background: transparent;
+  color: #777;
+  font-size: 18px;
+  line-height: 1;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  right: 0;
+  width: 145px;
+  min-height: 497px;
+  padding: 220px 20px 20px;
+  background: #000;
+  text-align: center;
+}
+
+.mobile-menu a {
+  display: block;
+  margin: 0 0 14px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* HERO */
+.hero {
+  height: 85vh;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.left {
+  float: left;
+  width: 50%;
+  padding-top: 50px;
+}
+
+.left h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.left h2 {
+  color: #1e90ff;
+  margin: 10px 0;
+}
+
+.left p {
+  color: gray;
+  font-size: 14px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #1e90ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.right {
+  float: right;
+  width: 50%;
+  text-align: center;
+}
+
+.right img {
+  width: 70%;
+  margin-top: 40px;
+}
+
+/* MOBILE */
+@media (max-width: 425px) {
+  nav {
+    min-height: 50px;
+    padding: 15px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    float: none;
+    padding-left: 0;
+  }
+
+  .desktop-links {
+    display: none;
+  }
+
+  .username {
+    float: none;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .mobile-menu-control {
+    position: relative;
+    display: block;
+  }
+
+  /* CSS-only interaction: focusing the hamburger opens its sibling menu. */
+  .hamburger:focus + .mobile-menu,
+  .mobile-menu-control:focus-within .mobile-menu {
+    display: block;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 85vh;
+    padding: 25px 18px 40px;
+    overflow: hidden;
+  }
+
+  .left {
+    float: none;
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .left h1 {
+    font-size: 24px;
+    line-height: 1.05;
+    margin-top: 0;
+  }
+
+  .left h2 {
+    font-size: 23px;
+  }
+
+  .left p {
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+
+  .right {
+    float: none;
+    width: 100%;
+  }
+
+  .right img {
+    width: 100%;
+    max-width: 290px;
+    margin-top: 25px;
+  }
+}
