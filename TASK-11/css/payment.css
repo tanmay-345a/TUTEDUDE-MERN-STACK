@@ -1,0 +1,181 @@
+/* Force the page to fit the screen */
+body, html {
+    height: 100vh;
+    /* overflow: hidden; Prevents overall page scrolling */
+}
+
+.payment-container {
+    display: flex;
+    height: 100%;
+    /* min-height: 100%; */
+    overflow: hidden;
+}
+
+/* Left side is wider and white */
+.payment-left {
+    flex: 0 0 55%;
+    padding: 20px 60px;
+    background: #fff;
+}
+
+/* Right side is narrower and light grey */
+.payment-right {
+    flex: 0 0 45%;
+    padding: 40px 80px;
+    background: #f9fafb;
+}
+
+.breadcrumb { color: #9ca3af; margin-bottom: 30px; font-weight: bold; }
+
+h2 { 
+    font-size: 20px;
+    margin: 10px 0 10px;
+    color: #1f2937; 
+}
+
+/* Input Styles */
+.input-group { margin-bottom: 12px; display: flex; flex-direction: column; }
+
+.input-group label { font-size: 13px; font-weight: 600; color: #4b5563; margin-bottom: 4px; }
+
+.input-group input, .input-group select {
+    padding: 10px;
+    background: #f3f4f6;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* Payment Card Box */
+.payment-card-box {
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.method-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tab {
+    flex: 1;
+    border: 1px solid #e5e7eb;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: left;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.tab-more{
+    border: 1px solid #e5e7eb;
+    padding: 20px;
+    display: flex;
+    border-radius: 12px;
+    align-items: center;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.tab.active {
+    border: 2px solid #f97316; /* Brand Orange */
+    color: #f97316;
+}
+
+.tab i { display: block; font-size: 16px; margin-bottom: 2px; }
+
+/* Form Rows for Expiry/CVC and Country/ZIP */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+.form-row .input-group { flex: 1; }
+
+/* REUSED SUMMARY STYLES from cart.css */
+.summary-title { text-align: center; margin-top: 30px; margin-bottom: 40px; font-size: 1.8rem; }
+
+/* Summary Card */
+.summary-card {
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 20px 20px 8px 20px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.coupon-label {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 5px;
+}
+
+.coupon-row {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0 20px;
+}
+
+.coupon-row input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fcfcfc;
+}
+
+
+.summary-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 20px; padding: 30px; }
+
+/* ... (REUSED existing apply-btn, pay-btn, and price-line styles here from cart.css ) */
+
+.apply-btn {
+    width: 40%;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap; /* FORCES text to stay in one line */
+    font-weight: 500;
+}
+
+/* Pricing Lines */
+.price-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #6b7280;
+}
+
+.price-line.total {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+.pay-btn {
+    width: 100%;
+    background: #f97316;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.trust-icons img {
+    margin: 10px 25px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.imgSecure {
+    width: 2.7rem;
+}

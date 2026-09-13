@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thala 7. Shopping Cart</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            
+            <!-- Logo -->
+            <div class="logo">
+                <h2>Thala <span>7.</span></h2>
+            </div>
+
+            <!-- Menu -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Brands <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li><a href="#">More <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <!-- Right Section -->
+            <div class="nav-icons">
+
+                <!-- Search -->
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+
+                 <!-- Cart -->
+                <div class="cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>3</span>
+                </div>
+
+                <!-- Profile -->
+                <img 
+                    src="https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?cs=srgb&dl=pexels-beardedbasturds-842980.jpg&fm=jpg" 
+                    alt="profile" 
+                    class="profile"
+                >
+
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="cart-page-container">
+    
+        <h1 class="main-title">Shopping Cart</h1>
+
+        <div class="cart-wrapper">
+            
+            <div class="cart-left">
+                <!-- <h1>Shopping Cart</h1> -->
+                
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Seven By M.S. Dhoni W...</td>
+                            <td class="qty-control">- 1 +</td>
+                            <td>₹4,999</td>
+                            <td><i class="fa-solid fa-xmark remove-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Seven By M.S. Dhoni W...</td>
+                            <td class="qty-control">- 1 +</td>
+                            <td>₹4,999</td>
+                            <td><i class="fa-solid fa-xmark remove-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Seven By M.S. Dhoni W...</td>
+                            <td class="qty-control">- 1 +</td>
+                            <td>₹4,999</td>
+                            <td><i class="fa-solid fa-xmark remove-icon"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="cart-right">
+                <div class="summary-card">
+                    <!-- <label>Enter Coupon Code</label> -->
+                    <p class="coupon-label">Enter Coupon Code</p>
+                    <div class="coupon-row">
+                        <input type="text" placeholder="COUPON CODE">
+                        <button class="apply-btn">Apply Coupon</button>
+                    </div>
+
+                    <div class="price-breakdown">
+                        <div class="price-line"><span>Sub Total</span> <span>₹4,700</span></div>
+                        <div class="price-line"><span>Taxes(if applicable)</span> <span>₹199</span></div>
+                        <div class="price-line"><span>Discount</span> <span>₹0</span></div>
+                        <div class="price-line total"><span>Total</span> <span>₹4,999</span></div>
+                    </div>
+
+                    
+                </div>
+
+                <!-- <button class="pay-btn">Pay Now ₹4,999</button> -->
+                <a href="payment.html" class="pay-link">
+                    <button class="pay-btn">Pay Now ₹4,999</button>
+                </a>
+
+                <div class="trust-icons">
+                    <img src="images/Secure-SSL-Encryption.jpg" alt="ssl">
+                    <img src="images/razorpay.png" alt="Razorpay">
+                    <img class="imgSecure" src="images/SecurePayment.JPG" alt="SecurePayment">
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="bottom-container">
+            <a href="products.html" class="continue-link">
+                <i class="fa-solid fa-chevron-left"></i> Continue Shopping
+            </a>
+        </div>
+
+    </main>
+
+</body>
+</html>

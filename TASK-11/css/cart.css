@@ -1,0 +1,192 @@
+/* Container for the whole page content */
+.cart-page-container {
+    padding: 20px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #1f2937;
+    text-align: left; /* Ensures it stays on the left */
+}
+
+/* Layout Wrapper */
+.cart-wrapper {
+    display: flex;
+    gap: 60px;
+    background-color: #fff;
+    align-items: flex-start; /* Prevents right card from stretching vertically */
+}
+
+.cart-left { 
+    flex: 0 0 60%; 
+}
+
+.cart-right { 
+    flex: 0 0 34%; 
+}
+
+/* Heading Styling */
+.cart-left h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #1f2937;
+}
+
+/* Table Styling */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th {
+    text-align: left;
+    font-size: 14px;
+    color: #9ca3af;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Cell Padding */
+.cart-table td {
+    padding: 15px 0; /* REDUCED: Was 25px-30px, now 15px for tighter spacing */
+    border-bottom: 1px solid #f9f9f9;
+    vertical-align: middle;
+}
+
+.remove-icon {
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Aligning Headers and Cells together */
+/* Product: Left */
+.cart-table th:nth-child(1), .cart-table td:nth-child(1) {
+    text-align: left;
+    width: 30%;
+}
+
+
+/* Quantity: Center (Header and Value) */
+.cart-table th:nth-child(2), .cart-table td:nth-child(2) {
+    text-align: center;
+    width: 25%;
+}
+
+/* Price: Right */
+.cart-table th:nth-child(3), .cart-table td:nth-child(3) {
+    text-align: right;
+    width: 20%;
+    padding-right: 60px; /* Creates the gap before the X icon */
+}
+
+/* Remove Icon: Right */
+.cart-table th:nth-child(4), .cart-table td:nth-child(4) {
+    text-align: right;
+    width: 5%;
+}
+
+/* Summary Card */
+.summary-card {
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 20px 20px 8px 20px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.coupon-label {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 5px;
+}
+
+.coupon-row {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0 20px;
+}
+
+.coupon-row input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fcfcfc;
+}
+
+.apply-btn {
+    width: 40%;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap; /* FORCES text to stay in one line */
+    font-weight: 500;
+}
+
+/* Pricing Lines */
+.price-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #6b7280;
+}
+
+.price-line.total {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+.pay-link {
+    text-decoration: none; /* Removes any default underline */
+    display: block;        /* Ensures the link takes up the full width of the button */
+    width: 100%;           /* Matches the button width */
+}
+
+.pay-btn {
+    width: 100%;
+    background: #f97316;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: tranform 0.2s ease-in-out, background 0.3s ease;
+}
+
+.pay-btn:hover {
+    background: #ea580c;
+}
+
+.pay-btn:active {
+    transform: scale(0.98);
+}
+
+.continue-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #5e6267;
+    font-weight: bold;
+}
+
+.trust-icons img {
+    margin: 10px 25px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.imgSecure {
+    width: 2.7rem;
+}

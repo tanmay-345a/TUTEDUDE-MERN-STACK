@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thala 7. Checkout</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <main class="payment-container">
+        <div class="payment-left">
+            <p class="breadcrumb">Checkout</p>
+            
+            <section class="contact-section">
+                <h2>Contact Details</h2>
+                <div class="input-group">
+                    <label>Email ID</label>
+                    <input type="email" placeholder="John Doe">
+                </div>
+            </section>
+
+            <section class="payment-methods">
+                <h2>Payment</h2>
+                <div class="payment-card-box">
+                    <div class="method-tabs">
+                        <div class="tab active">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <span>Card</span>
+                        </div>
+                        <div class="tab">
+                            <i class="fa-solid fa-bitcoin-sign"></i>
+                            <span>Crypto</span>
+                        </div>
+                        <div class="tab">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <span>Bank</span>
+                        </div>
+                        <div class="tab-more"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                    </div>
+
+                    <div class="card-form">
+                        <div class="input-group">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="John Doe">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Expiry</label>
+                                <input type="text" placeholder="MM/YY">
+                            </div>
+                            <div class="input-group">
+                                <label>CVC</label>
+                                <input type="text" placeholder="***">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Country</label>
+                                <select>
+                                    <option>India</option>
+                                    <option>USA</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>ZIP</label>
+                                <input type="text" placeholder="XXXXX">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="payment-right">
+            <h1 class="summary-title">Order Summary</h1>
+            
+            <div class="summary-card">
+                <p class="coupon-label">Enter Coupon Code</p>
+                <div class="coupon-row">
+                    <input type="text" placeholder="COUPON CODE">
+                    <button class="apply-btn">Apply Coupon</button>
+                </div>
+
+                <div class="price-breakdown">
+                    <div class="price-line"><span>Sub Total</span> <span>₹4,700</span></div>
+                    <div class="price-line"><span>Taxes(if applicable)</span> <span>₹199</span></div>
+                    <div class="price-line"><span>Discount</span> <span>₹0</span></div>
+                    <div class="price-line total"><span>Total</span> <span>₹4,999</span></div>
+                </div>
+            </div>
+
+            <button class="pay-btn">Pay Now ₹4,999</button>
+            <div class="trust-icons">
+                <img src="images/Secure-SSL-Encryption.jpg" alt="ssl">
+                <img src="images/razorpay.png" alt="Razorpay">
+                <img class="imgSecure" src="images/SecurePayment.JPG" alt="SecurePayment">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
