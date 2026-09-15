@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 60px;
+    padding: 6px 30px;
+
+    background-color: white;
+    border-bottom: 1.5px solid #ddd;
+
+    z-index: 1000; /* keeps it on top */
+}
+
+.header-left {
+    font-size: 18px;
+    font-weight: 550;
+    color: #535353ef; /* softer than black */
+}
+
+.header-right .login-btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px; /* pill shape */
+
+    background-color: #ede9fe; /* light purple */
+    color: #5b21b6; /* darker purple text */
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+    background-color: #ddd6fe;
+}
+
+.main-content {
+    padding: 30px;
+    margin-top: 130px;
+}
+
+.search-container {
+    position: fixed;
+    top: 75px; /* exactly below header */
+    left: 0;
+    width: 100%;
+
+    padding: 0 30px;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: #f5f5f5;
+    z-index: 999;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* space between input & button */
+
+    /* margin: 5px 30px; */
+
+    border: 2px solid #e5e5e5;
+    border-radius: 12px;
+
+    padding: 15px;
+    background-color: #f9fafb;
+
+    width: 100%;
+}
+
+/* Input area */
+.search-input-box {
+    position: relative;
+    width: 260px;
+}
+
+.search-input-box input {
+    width: 100%;
+    padding: 10px 0 10px 15px;
+
+    border-radius: 10px;
+    border: 1.5px solid #e0e0e0;
+
+    background-color: #f1f3f5;
+    outline: none;
+}
+
+/* Icon inside input */
+.search-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    
+    font-size: 13px;
+    color: #9aa0a6; /* softer grey */
+    pointer-events: none;
+}
+
+.search-btn {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #7b61ff, #5b21b6);
+    color: white;
+
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #6a50e0;
+}
+
+.search-btn:active {
+    transform: scale(0.96);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: #eaeaea;
+    padding: 15px;
+    border-radius: 10px;
+}
