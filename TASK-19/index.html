@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task19-JS Service Booking Web App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Logo</div>
+
+        <ul class="nav-links">
+            <li>Home</li>
+            <li>Services</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+        </ul>
+
+        <div class="user-section">
+            <span class="username">Username</span>
+            <button class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="container">
+
+        <!-- Left Section -->
+        <div class="left-section">
+
+            <!-- Cart -->
+            <div class="card">
+                <h3>Added Items</h3>
+
+                <div class="table-header">
+                    <span>S.No</span>
+                    <span>Service Name</span>
+                    <span>Price</span>
+                </div>
+
+                <div id="cart-items">
+                    <p class="empty">No Items Added</p>
+                </div>
+
+                <hr>
+
+                <div class="total">
+                    <span>Total Amount</span>
+                    <span id="total-amount">₹ 0.00</span>
+                </div>
+            </div>
+
+            <!-- Booking -->
+            <div class="card">
+                <h3>Book Now</h3>
+
+                <input type="text" id="name" placeholder="Full Name">
+
+                <div class="row">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+
+                <button id="book-btn" disabled>Book Now</button>
+
+                <div id="success-message" class="hidden">
+                    Booking successful! We will contact you soon.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+
+            <div class="card">
+                <h2>Browse Our Services</h2>
+
+                <p class="desc">
+                    Select a service and add it to your cart
+                </p>
+
+                <hr>
+
+                <div class="service">
+                    <img id="service-img" src="" alt="service">
+
+                    <div class="service-info">
+                        <h3 id="service-name">Service Name</h3>
+                        <span id="service-price">₹ 0</span>
+                    </div>
+
+                    <div class="buttons">
+                        <button id="skip-btn">Skip Item</button>
+                        <button id="add-btn">Add Item</button>
+                    </div>
+
+                    <!-- Extra button to satisfy requirement -->
+                    <div class="extra-btn">
+                        <button id="cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <p class="bottom-text">
+                    Add items to cart and proceed to booking
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
