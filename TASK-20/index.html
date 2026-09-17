@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Service</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <h2 class="logo">Laundry</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button type="button" class="user-btn">Username</button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Revitalize Your Clothes with Expert <span>Laundry Services!</span></h1>
+            <p>We provide premium laundry services with affordable prices and fast delivery.</p>
+            <button type="button" id="hero-btn">Book a Service Today</button>
+        </div>
+
+        <div class="hero-right">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3GcOLMgA7Ws0yt39ZC110qpQ2QiRoRmxHPA&s" alt="laundry">
+        </div>
+    </section>
+
+    <section class="achievement">
+        <div>
+            <h2>15+</h2>
+            <p>Laundry Services</p>
+        </div>
+
+        <div>
+            <h2>240+</h2>
+            <p>Happy Customers</p>
+        </div>
+
+        <div>
+            <h2>2+ Years</h2>
+            <p>Experience</p>
+        </div>
+    </section>
+
+    <section class="booking-section" id="booking-section">
+
+        <div class="services">
+            <h2>Our Services</h2>
+            <div class="service-box">
+                <p>Dry Cleaning - ₹200</p>
+                <button type="button" class="add-btn" data-id="1" data-name="Dry Cleaning" data-price="200">Add
+                    Item</button>
+            </div>
+
+            <div class="service-box">
+                <p>Wash & Fold - ₹100</p>
+                <button type="button" class="add-btn" data-id="2" data-name="Wash & Fold" data-price="100">Add
+                    Item</button>
+            </div>
+
+            <div class="service-box">
+                <p>Ironing - ₹300</p>
+                <button type="button" class="add-btn" data-id="3" data-name="Ironing" data-price="300">Add Item</button>
+            </div>
+
+            <div class="service-box">
+                <p>Stain Removal - ₹500</p>
+                <button type="button" class="add-btn" data-id="4" data-name="Stain Removal" data-price="500">Add
+                    Item</button>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Added Items</h2>
+            <div id="cart-items">
+                <p>No items added</p>
+            </div>
+            <h3>Total : ₹<span id="total">0</span></h3>
+
+            <div class="form">
+                <h2>Book Now</h2>
+                <input type="text" id="name" placeholder="Full Name">
+                <input type="email" id="email" placeholder="Email">
+                <input type="text" id="phone" placeholder="Phone Number">
+                <button type="button" id="book-btn">Book Now</button>
+                <p id="message"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quality">
+        <h1>Why Choose Us?</h1>
+        <div class="quality-container">
+            <div class="quality-box">
+                <h3>Premium Services</h3>
+                <p>Best quality cleaning for your clothes.</p>
+            </div>
+
+            <div class="quality-box">
+                <h3>Quick Support</h3>
+                <p>Fast customer support anytime.</p>
+            </div>
+
+            <div class="quality-box">
+                <h3>Timely Delivery</h3>
+                <p>We deliver your clothes on time.</p>
+            </div>
+
+            <div class="quality-box">
+                <h3>Affordable Prices</h3>
+                <p>Quality services at low prices.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h1>Subscribe Newsletter</h1>
+        <input type="text" id="newsletter-name" placeholder="Full Name">
+        <input type="email" id="newsletter-email" placeholder="Email">
+        <button type="button" id="subscribe-btn">Subscribe</button>
+    </section>
+
+    <footer>
+        <h2>Laundry</h2>
+        <p>About Us</p>
+        <p>Contact Us</p>
+        <p>FAQs</p>
+        <p>Follow us on Social Media</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
