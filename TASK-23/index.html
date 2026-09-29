@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Greenwood Library</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+
+          colors: {
+            greenwood: {
+              50: "#f2f7f3",
+              100: "#e2eee5",
+              200: "#c7ddcd",
+              300: "#a4c7ad",
+              400: "#78a887",
+              500: "#568d68",
+              600: "#3f7353",
+              700: "#315b42",
+              800: "#294a37",
+              900: "#213c2d"
+            }
+          },
+
+          keyframes: {
+
+            slideUp: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(30px)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)"
+              }
+            },
+
+            slideIn: {
+              "0%": {
+                opacity: "0",
+                transform: "translateX(-30px)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateX(0)"
+              }
+            },
+
+            scaleIn: {
+              "0%": {
+                opacity: "0",
+                transform: "scale(.92)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "scale(1)"
+              }
+            },
+
+            float: {
+              "0%,100%": {
+                transform: "translateY(0)"
+              },
+              "50%": {
+                transform: "translateY(-10px)"
+              }
+            },
+
+            rotateSlow: {
+              from: {
+                transform: "rotate(0deg)"
+              },
+              to: {
+                transform: "rotate(360deg)"
+              }
+            },
+
+            morph: {
+              "0%,100%": {
+                borderRadius: "50% 40% 60% 45%"
+              },
+              "50%": {
+                borderRadius: "40% 60% 45% 55%"
+              }
+            },
+
+            glow: {
+              "0%,100%": {
+                boxShadow: "0 0 0 rgba(63,115,83,0)"
+              },
+              "50%": {
+                boxShadow: "0 0 25px rgba(63,115,83,.25)"
+              }
+            }
+          },
+
+          animation: {
+
+            "slide-up":
+              "slideUp .8s ease forwards",
+
+            "slide-in":
+              "slideIn .8s ease forwards",
+
+            "scale-in":
+              "scaleIn .8s ease forwards",
+
+            float:
+              "float 5s ease-in-out infinite",
+
+            "rotate-slow":
+              "rotateSlow 18s linear infinite",
+
+            morph:
+              "morph 8s ease-in-out infinite",
+
+            glow:
+              "glow 3s ease-in-out infinite"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f8f8f4;
+      color: #202521;
+    }
+
+    .hero-grid {
+      background-image:
+        linear-gradient(
+          rgba(63,115,83,.045) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(63,115,83,.045) 1px,
+          transparent 1px
+        );
+
+      background-size: 40px 40px;
+    }
+
+    .image-zoom {
+      transition: transform .7s ease;
+    }
+
+    .gallery-card:hover .image-zoom {
+      transform: scale(1.08);
+    }
+
+    .play-button {
+      transition: all .3s ease;
+    }
+
+    .play-button:hover {
+      transform: scale(1.08);
+      background: #315b42;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header
+  class="
+    fixed
+    top-0
+    left-0
+    right-0
+    z-50
+    bg-[#f8f8f4]/85
+    backdrop-blur-md
+    border-b
+    border-gray-200/50
+  "
+>
+
+  <nav
+    class="
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+      py-5
+      flex
+      items-center
+      justify-between
+    "
+  >
+
+    <!-- LOGO -->
+
+    <a
+      href="#"
+      class="
+        text-sm
+        font-medium
+        tracking-wide
+      "
+    >
+      Greenwood
+    </a>
+
+
+    <!-- LINKS -->
+
+    <div
+      class="
+        hidden
+        md:flex
+        items-center
+        gap-8
+        text-xs
+        text-gray-500
+      "
+    >
+
+      <a
+        href="#sections"
+        class="hover:text-greenwood-600 transition"
+      >
+        Sections
+      </a>
+
+      <a
+        href="#gallery"
+        class="hover:text-greenwood-600 transition"
+      >
+        Gallery
+      </a>
+
+      <a
+        href="#membership"
+        class="hover:text-greenwood-600 transition"
+      >
+        Membership
+      </a>
+
+      <a
+        href="#events"
+        class="hover:text-greenwood-600 transition"
+      >
+        Events
+      </a>
+
+    </div>
+
+
+    <a
+      href="#contact"
+      class="
+        text-xs
+        text-gray-500
+        hover:text-greenwood-600
+        transition
+      "
+    >
+      Visit Us
+    </a>
+
+  </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+  class="
+    relative
+    min-h-screen
+    pt-32
+    pb-14
+    overflow-hidden
+  "
+>
+
+  <div
+    class="
+      absolute
+      inset-0
+      hero-grid
+      opacity-60
+    "
+  ></div>
+
+
+  <!-- FLOATING SHAPE -->
+
+  <div
+    class="
+      absolute
+      right-10
+      top-28
+      w-40
+      h-40
+      bg-greenwood-100/50
+      blur-3xl
+      rounded-full
+      animate-float
+    "
+  ></div>
+
+
+  <div
+    class="
+      relative
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+    "
+  >
+
+    <div
+      class="
+        grid
+        lg:grid-cols-2
+        gap-12
+        items-center
+      "
+    >
+
+
+      <!-- HERO TEXT -->
+
+      <div
+        class="
+          animate-slide-in
+        "
+      >
+
+        <p
+          class="
+            text-xs
+            text-greenwood-600
+            mb-6
+          "
+        >
+          Open Since 1983
+        </p>
+
+
+        <h1
+          class="
+            text-5xl
+            sm:text-6xl
+            lg:text-[68px]
+            leading-[.98]
+            font-light
+            tracking-[-.04em]
+          "
+        >
+
+          Your Neighbourhood
+
+          <br>
+
+          <span>
+            Library.
+          </span>
+
+        </h1>
+
+
+        <p
+          class="
+            mt-7
+            max-w-md
+            text-sm
+            leading-6
+            text-gray-500
+          "
+        >
+          Thousands of books, quiet reading rooms,
+          community events, and free Wi-Fi —
+          serving Greenwood since 1983.
+        </p>
+
+
+        <div
+          class="
+            mt-8
+            flex
+            items-center
+            gap-6
+          "
+        >
+
+          <a
+            href="#gallery"
+            class="
+              px-6
+              py-3
+              bg-gray-800
+              text-white
+              rounded-full
+              text-xs
+              hover:bg-greenwood-700
+              transition
+              animate-glow
+            "
+          >
+            Explore Collection
+          </a>
+
+
+          <a
+            href="#membership"
+            class="
+              text-xs
+              text-gray-500
+              hover:text-greenwood-600
+              transition
+            "
+          >
+            Join Free
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- HERO IMAGE -->
+
+      <div
+        class="
+          relative
+          animate-scale-in
+        "
+      >
+
+        <div
+          class="
+            relative
+            h-[330px]
+            sm:h-[390px]
+            overflow-hidden
+            rounded-[12px]
+          "
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=85"
+            alt="Greenwood Library"
+            class="
+              w-full
+              h-full
+              object-cover
+            "
+          >
+
+        </div>
+
+
+        <!-- PLAY BUTTON -->
+
+        <button
+          class="
+            play-button
+            absolute
+            left-0
+            top-1/2
+            -translate-y-1/2
+            -translate-x-1/2
+            w-16
+            h-16
+            rounded-xl
+            bg-gray-800
+            text-white
+            flex
+            items-center
+            justify-center
+            shadow-xl
+          "
+        >
+
+          <span class="text-xl">
+            ▶
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- STATS -->
+
+    <div
+      class="
+        mt-16
+        pt-8
+        border-t
+        border-gray-200
+        grid
+        grid-cols-2
+        md:grid-cols-4
+        gap-8
+        animate-slide-up
+      "
+    >
+
+      <div>
+
+        <p class="text-2xl font-light">
+          12,000+
+        </p>
+
+        <p class="mt-1 text-[11px] text-gray-400">
+          Books & resources
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <p class="text-2xl font-light">
+          40+
+        </p>
+
+        <p class="mt-1 text-[11px] text-gray-400">
+          Years serving
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <p
+          class="
+            text-2xl
+            font-light
+            text-greenwood-600
+          "
+        >
+          Free
+        </p>
+
+        <p class="mt-1 text-[11px] text-gray-400">
+          Wi-Fi & internet
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <p class="text-2xl font-light">
+          6
+        </p>
+
+        <p class="mt-1 text-[11px] text-gray-400">
+          Library sections
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- SCROLL -->
+
+    <div
+      class="
+        mt-10
+        flex
+        justify-center
+        text-[10px]
+        text-gray-400
+      "
+    >
+      ↓ Scroll to explore
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECTIONS
+===================================================== -->
+
+<section
+  id="sections"
+  class="
+    py-24
+    bg-white
+  "
+>
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+    "
+  >
+
+    <div>
+
+      <p class="text-xs text-greenwood-600">
+        OUR COLLECTION
+      </p>
+
+      <h2
+        class="
+          mt-4
+          text-4xl
+          sm:text-5xl
+          font-light
+        "
+      >
+        Something for every reader.
+      </h2>
+
+    </div>
+
+
+    <!-- SIX CARDS -->
+
+    <div
+      class="
+        mt-12
+        grid
+        sm:grid-cols-2
+        lg:grid-cols-3
+        gap-4
+      "
+    >
+
+
+      <!-- CARD 1 -->
+
+      <div
+        class="
+          group
+          p-8
+          min-h-[210px]
+          rounded-2xl
+          bg-greenwood-50
+          hover:bg-greenwood-100
+          transition
+          duration-500
+        "
+      >
+
+        <p
+          class="
+            text-sm
+            text-greenwood-600
+          "
+        >
+          01
+        </p>
+
+        <h3
+          class="
+            mt-12
+            text-xl
+            font-medium
+            group-hover:text-greenwood-700
+            transition
+          "
+        >
+          Fiction
+        </h3>
+
+        <p
+          class="
+            mt-2
+            text-xs
+            text-gray-500
+          "
+        >
+          Stories, novels & timeless classics.
+        </p>
+
+      </div>
+
+
+
+      <!-- CARD 2 -->
+
+      <div
+        class="
+          group
+          p-8
+          min-h-[210px]
+          rounded-2xl
+          bg-amber-50
+          hover:bg-amber-100
+          transition
+          duration-500
+        "
+      >
+
+        <p class="text-sm text-amber-600">
+          02
+        </p>
+
+        <h3
+          class="
+            mt-12
+            text-xl
+            font-medium
+            group-hover:text-amber-700
+            transition
+          "
+        >
+          Children's
+        </h3>
+
+        <p class="mt-2 text-xs text-gray-500">
+          Books and activities for young readers.
+        </p>
+
+      </div>
+
+
+
+      <!-- CARD 3 -->
+
+      <div
+        class="
+          group
+          p-8
+          min-h-[210px]
+          rounded-2xl
+          bg-blue-50
+          hover:bg-blue-100
+          transition
+          duration-500
+        "
+      >
+
+        <p class="text-sm text-blue-600">
+          03
+        </p>
+
+        <h3
+          class="
+            mt-12
+            text-xl
+            font-medium
+            group-hover:text-blue-700
+            transition
+          "
+        >
+          Science
+        </h3>
+
+        <p class="mt-2 text-xs text-gray-500">
+          Explore science, technology and nature.
+        </p>
+
+      </div>
+
+
+
+      <!-- CARD 4 -->
+
+      <div
+        class="
+          group
+          p-8
+          min-h-[210px]
+          rounded-2xl
+          bg-rose-50
+          hover:bg-rose-100
+          transition
+          duration-500
+        "
+      >
+
+        <p class="text-sm text-rose-600">
+          04
+        </p>
+
+        <h3
+          class="
+            mt-12
+            text-xl
+            font-medium
+            group-hover:text-rose-700
+            transition
+          "
+        >
+          History
+        </h3>
+
+        <p class="mt-2 text-xs text-gray-500">
+          Discover people, places and the past.
+        </p>
+
+      </div>
+
+
+
+      <!-- CARD 5 -->
+
+      <div
+        class="
+          group
+          p-8
+          min-h-[210px]
+          rounded-2xl
+          bg-violet-50
+          hover:bg-violet-100
+          transition
+          duration-500
+        "
+      >
+
+        <p class="text-sm text-violet-600">
+          05
+        </p>
+
+        <h3
+          class="
+            mt-12
+            text-xl
+            font-medium
+            group-hover:text-violet-700
+            transition
+          "
+        >
+          Arts
+        </h3>
+
+        <p class="mt-2 text-xs text-gray-500">
+          Art, music, design and creativity.
+        </p>
+
+      </div>
+
+
+
+      <!-- CARD 6 -->
+
+      <div
+        class="
+          group
+          p-8
+          min-h-[210px]
+          rounded-2xl
+          bg-zinc-100
+          hover:bg-zinc-200
+          transition
+          duration-500
+        "
+      >
+
+        <p class="text-sm text-zinc-600">
+          06
+        </p>
+
+        <h3
+          class="
+            mt-12
+            text-xl
+            font-medium
+            group-hover:text-zinc-800
+            transition
+          "
+        >
+          Digital
+        </h3>
+
+        <p class="mt-2 text-xs text-gray-500">
+          Online resources and digital access.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section
+  id="gallery"
+  class="py-24"
+>
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+    "
+  >
+
+    <p class="text-xs text-greenwood-600">
+      THE LIBRARY
+    </p>
+
+    <h2
+      class="
+        mt-4
+        text-4xl
+        sm:text-5xl
+        font-light
+      "
+    >
+      Spaces made for reading.
+    </h2>
+
+
+    <div
+      class="
+        mt-12
+        grid
+        grid-cols-1
+        md:grid-cols-2
+        gap-5
+      "
+    >
+
+
+      <!-- IMAGE 1 -->
+
+      <div
+        class="
+          gallery-card
+          group
+          relative
+          h-[330px]
+          overflow-hidden
+          rounded-2xl
+        "
+      >
+
+        <img
+          src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1000&q=85"
+          class="
+            image-zoom
+            w-full
+            h-full
+            object-cover
+          "
+          alt="Library shelves"
+        >
+
+        <div
+          class="
+            absolute
+            bottom-0
+            left-0
+            right-0
+            p-6
+            bg-gradient-to-t
+            from-black/60
+            to-transparent
+            text-white
+          "
+        >
+
+          <h3 class="text-lg">
+            Main Reading Hall
+          </h3>
+
+          <p class="text-xs mt-1 text-white/70">
+            First Floor
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- IMAGE 2 -->
+
+      <div
+        class="
+          gallery-card
+          group
+          relative
+          h-[330px]
+          overflow-hidden
+          rounded-2xl
+        "
+      >
+
+        <img
+          src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=85"
+          class="
+            image-zoom
+            w-full
+            h-full
+            object-cover
+          "
+          alt="Reading space"
+        >
+
+        <div
+          class="
+            absolute
+            bottom-0
+            left-0
+            right-0
+            p-6
+            bg-gradient-to-t
+            from-black/60
+            to-transparent
+            text-white
+          "
+        >
+
+          <h3 class="text-lg">
+            Quiet Reading Room
+          </h3>
+
+          <p class="text-xs mt-1 text-white/70">
+            Second Floor
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- IMAGE 3 -->
+
+      <div
+        class="
+          gallery-card
+          group
+          relative
+          h-[330px]
+          overflow-hidden
+          rounded-2xl
+        "
+      >
+
+        <img
+          src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=1000&q=85"
+          class="
+            image-zoom
+            w-full
+            h-full
+            object-cover
+          "
+          alt="Library interior"
+        >
+
+        <div
+          class="
+            absolute
+            bottom-0
+            left-0
+            right-0
+            p-6
+            bg-gradient-to-t
+            from-black/60
+            to-transparent
+            text-white
+          "
+        >
+
+          <h3 class="text-lg">
+            Community Space
+          </h3>
+
+          <p class="text-xs mt-1 text-white/70">
+            Ground Floor
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- IMAGE 4 -->
+
+      <div
+        class="
+          gallery-card
+          group
+          relative
+          h-[330px]
+          overflow-hidden
+          rounded-2xl
+        "
+      >
+
+        <img
+          src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1000&q=85"
+          class="
+            image-zoom
+            w-full
+            h-full
+            object-cover
+          "
+          alt="Library books"
+        >
+
+        <div
+          class="
+            absolute
+            bottom-0
+            left-0
+            right-0
+            p-6
+            bg-gradient-to-t
+            from-black/60
+            to-transparent
+            text-white
+          "
+        >
+
+          <h3 class="text-lg">
+            Digital Library
+          </h3>
+
+          <p class="text-xs mt-1 text-white/70">
+            Technology Room
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VALUES BENTO
+===================================================== -->
+
+<section class="py-24 bg-white">
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+    "
+  >
+
+    <div
+      class="
+        grid
+        md:grid-cols-4
+        gap-4
+      "
+    >
+
+
+      <!-- LARGE ABOUT -->
+
+      <div
+        class="
+          md:col-span-2
+          md:row-span-2
+          min-h-[390px]
+          rounded-2xl
+          bg-gray-900
+          text-white
+          p-9
+          flex
+          flex-col
+          justify-end
+        "
+      >
+
+        <p class="text-xs text-greenwood-300">
+          ABOUT GREENWOOD
+        </p>
+
+        <h2
+          class="
+            mt-4
+            text-3xl
+            font-light
+          "
+        >
+          A library for
+          everyone.
+        </h2>
+
+        <p
+          class="
+            mt-4
+            text-sm
+            leading-6
+            text-gray-400
+          "
+        >
+          We believe libraries are more than
+          shelves of books. They are places
+          where people meet, learn and grow.
+        </p>
+
+      </div>
+
+
+
+      <div
+        class="
+          p-7
+          rounded-2xl
+          bg-greenwood-50
+        "
+      >
+
+        <p class="text-2xl text-greenwood-600">
+          40+
+        </p>
+
+        <p class="mt-8 text-sm font-medium">
+          Years of service
+        </p>
+
+      </div>
+
+
+      <div
+        class="
+          p-7
+          rounded-2xl
+          bg-amber-50
+        "
+      >
+
+        <p class="text-2xl text-amber-600">
+          50+
+        </p>
+
+        <p class="mt-8 text-sm font-medium">
+          Community events
+        </p>
+
+      </div>
+
+
+      <div
+        class="
+          p-7
+          rounded-2xl
+          bg-rose-50
+        "
+      >
+
+        <p class="text-2xl text-rose-600">
+          Free
+        </p>
+
+        <p class="mt-8 text-sm font-medium">
+          Digital access
+        </p>
+
+      </div>
+
+
+      <div
+        class="
+          p-7
+          rounded-2xl
+          bg-violet-50
+        "
+      >
+
+        <p class="text-2xl text-violet-600">
+          6
+        </p>
+
+        <p class="mt-8 text-sm font-medium">
+          Library sections
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="py-24">
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+    "
+  >
+
+    <div
+      class="
+        max-w-5xl
+        mx-auto
+        text-center
+      "
+    >
+
+      <p class="text-xs text-greenwood-600">
+        OUR STORY
+      </p>
+
+      <h2
+        class="
+          mt-5
+          text-4xl
+          sm:text-5xl
+          font-light
+        "
+      >
+        Built around curiosity,
+        community and connection.
+      </h2>
+
+
+      <div
+        class="
+          mt-10
+          grid
+          md:grid-cols-2
+          gap-10
+          text-left
+          text-sm
+          leading-7
+          text-gray-500
+        "
+      >
+
+        <p>
+          Greenwood Public Library has been part
+          of the neighbourhood since 1983.
+          From children's reading programs to
+          quiet study spaces, the library welcomes
+          people of every age.
+        </p>
+
+        <p>
+          Today, Greenwood combines traditional
+          library services with free Wi-Fi,
+          digital resources, community events
+          and modern learning spaces.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MEMBERSHIP
+===================================================== -->
+
+<section
+  id="membership"
+  class="
+    py-24
+    bg-white
+  "
+>
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+    "
+  >
+
+    <div>
+
+      <p class="text-xs text-greenwood-600">
+        MEMBERSHIP
+      </p>
+
+      <h2
+        class="
+          mt-4
+          text-4xl
+          sm:text-5xl
+          font-light
+        "
+      >
+        Find your membership.
+      </h2>
+
+    </div>
+
+
+    <div
+      class="
+        mt-12
+        grid
+        md:grid-cols-3
+        gap-5
+      "
+    >
+
+
+      <!-- BASIC -->
+
+      <div
+        class="
+          p-8
+          rounded-2xl
+          bg-gray-50
+          border
+          border-gray-100
+          hover:-translate-y-2
+          transition
+          duration-500
+        "
+      >
+
+        <p class="text-sm text-gray-400">
+          Basic
+        </p>
+
+        <h3
+          class="
+            mt-4
+            text-3xl
+            font-light
+          "
+        >
+          Free
+        </h3>
+
+        <p class="mt-3 text-xs text-gray-500">
+          For casual readers.
+        </p>
+
+
+        <ul
+          class="
+            mt-8
+            space-y-3
+            text-sm
+            text-gray-500
+          "
+        >
+
+          <li>✓ Borrow books</li>
+          <li>✓ Free Wi-Fi</li>
+          <li>✓ Library events</li>
+
+        </ul>
+
+
+        <a
+          href="#contact"
+          class="
+            block
+            mt-8
+            text-center
+            py-3
+            rounded-full
+            border
+            border-gray-300
+            text-xs
+            hover:border-greenwood-500
+            hover:text-greenwood-600
+            transition
+          "
+        >
+          Join
+        </a>
+
+      </div>
+
+
+
+      <!-- STUDENT -->
+
+      <div
+        class="
+          relative
+          p-8
+          rounded-2xl
+          bg-greenwood-50
+          border
+          border-greenwood-200
+          hover:-translate-y-2
+          transition
+          duration-500
+          animate-glow
+        "
+      >
+
+        <span
+          class="
+            absolute
+            top-5
+            right-5
+            px-3
+            py-1
+            rounded-full
+            bg-greenwood-600
+            text-white
+            text-[10px]
+          "
+        >
+          Popular
+        </span>
+
+
+        <p class="text-sm text-greenwood-600">
+          Student
+        </p>
+
+        <h3
+          class="
+            mt-4
+            text-3xl
+            font-light
+          "
+        >
+          Free
+        </h3>
+
+        <p class="mt-3 text-xs text-gray-500">
+          For students and learners.
+        </p>
+
+
+        <ul
+          class="
+            mt-8
+            space-y-3
+            text-sm
+            text-gray-500
+          "
+        >
+
+          <li>✓ Everything in Basic</li>
+          <li>✓ Study rooms</li>
+          <li>✓ Digital resources</li>
+
+        </ul>
+
+
+        <a
+          href="#contact"
+          class="
+            block
+            mt-8
+            text-center
+            py-3
+            rounded-full
+            bg-gray-800
+            text-white
+            text-xs
+            hover:bg-greenwood-700
+            transition
+          "
+        >
+          Join
+        </a>
+
+      </div>
+
+
+
+      <!-- FAMILY -->
+
+      <div
+        class="
+          p-8
+          rounded-2xl
+          bg-amber-50
+          border
+          border-amber-100
+          hover:-translate-y-2
+          transition
+          duration-500
+        "
+      >
+
+        <p class="text-sm text-amber-600">
+          Family
+        </p>
+
+        <h3
+          class="
+            mt-4
+            text-3xl
+            font-light
+          "
+        >
+          Free
+        </h3>
+
+        <p class="mt-3 text-xs text-gray-500">
+          For families and households.
+        </p>
+
+
+        <ul
+          class="
+            mt-8
+            space-y-3
+            text-sm
+            text-gray-500
+          "
+        >
+
+          <li>✓ Family borrowing</li>
+          <li>✓ Children's programs</li>
+          <li>✓ Event access</li>
+
+        </ul>
+
+
+        <a
+          href="#contact"
+          class="
+            block
+            mt-8
+            text-center
+            py-3
+            rounded-full
+            border
+            border-amber-300
+            text-xs
+            hover:bg-amber-100
+            transition
+          "
+        >
+          Join
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TESTIMONIAL
+===================================================== -->
+
+<section class="py-24">
+
+  <div
+    class="
+      max-w-4xl
+      mx-auto
+      px-6
+      text-center
+    "
+  >
+
+    <div
+      class="
+        w-20
+        h-20
+        mx-auto
+        rounded-full
+        overflow-hidden
+        grayscale
+        hover:grayscale-0
+        transition
+        duration-500
+      "
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+        alt="Library member"
+        class="w-full h-full object-cover"
+      >
+
+    </div>
+
+
+    <blockquote
+      class="
+        mt-8
+        text-2xl
+        sm:text-3xl
+        font-light
+        leading-relaxed
+      "
+    >
+      “Greenwood has become my favourite
+      place to read, learn and spend a
+      quiet afternoon.”
+    </blockquote>
+
+
+    <p
+      class="
+        mt-6
+        text-xs
+        text-gray-400
+      "
+    >
+      — Maya, Greenwood member
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT CTA
+===================================================== -->
+
+<section
+  id="contact"
+  class="py-24 bg-white"
+>
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+    "
+  >
+
+    <div
+      class="
+        rounded-2xl
+        bg-greenwood-50
+        p-8
+        sm:p-12
+      "
+    >
+
+      <div
+        class="
+          grid
+          lg:grid-cols-2
+          gap-10
+          items-end
+        "
+      >
+
+        <div>
+
+          <p class="text-xs text-greenwood-600">
+            VISIT GREENWOOD
+          </p>
+
+          <h2
+            class="
+              mt-4
+              text-4xl
+              sm:text-5xl
+              font-light
+            "
+          >
+            Come read
+            with us.
+          </h2>
+
+          <p
+            class="
+              mt-5
+              text-sm
+              text-gray-500
+            "
+          >
+            125 Greenwood Avenue,
+            Greenwood
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <p class="text-sm text-gray-500">
+            Monday – Friday: 9:00 AM – 8:00 PM
+          </p>
+
+          <p class="mt-2 text-sm text-gray-500">
+            Saturday – Sunday: 10:00 AM – 6:00 PM
+          </p>
+
+
+          <div
+            class="
+              mt-7
+              flex
+              flex-wrap
+              gap-4
+            "
+          >
+
+            <a
+              href="#"
+              class="
+                px-6
+                py-3
+                bg-gray-800
+                text-white
+                rounded-full
+                text-xs
+                hover:bg-greenwood-700
+                transition
+              "
+            >
+              Get Directions
+            </a>
+
+            <a
+              href="mailto:hello@greenwoodlibrary.com"
+              class="
+                px-6
+                py-3
+                border
+                border-gray-300
+                rounded-full
+                text-xs
+                hover:border-greenwood-500
+                hover:text-greenwood-600
+                transition
+              "
+            >
+              Email Us
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EVENTS
+===================================================== -->
+
+<section
+  id="events"
+  class="
+    py-24
+  "
+>
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+    "
+  >
+
+    <p class="text-xs text-greenwood-600">
+      WHAT'S HAPPENING
+    </p>
+
+    <h2
+      class="
+        mt-4
+        text-4xl
+        sm:text-5xl
+        font-light
+      "
+    >
+      Upcoming events.
+    </h2>
+
+
+    <div
+      class="
+        mt-12
+        grid
+        sm:grid-cols-2
+        lg:grid-cols-4
+        gap-5
+      "
+    >
+
+
+      <!-- EVENT -->
+
+      <article
+        class="
+          group
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          border
+          border-gray-100
+        "
+      >
+
+        <div
+          class="
+            h-44
+            overflow-hidden
+          "
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=700&q=80"
+            alt="Book club event"
+            class="
+              image-zoom
+              w-full
+              h-full
+              object-cover
+            "
+          >
+
+        </div>
+
+        <div class="p-5">
+
+          <p class="text-xs text-greenwood-600">
+            MAY 18
+          </p>
+
+          <h3 class="mt-3 font-medium">
+            Community Book Club
+          </h3>
+
+          <p class="mt-2 text-xs text-gray-400">
+            6:00 PM · Reading Room
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- EVENT 2 -->
+
+      <article
+        class="
+          group
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          border
+          border-gray-100
+        "
+      >
+
+        <div class="h-44 overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80"
+            alt="Children reading"
+            class="
+              image-zoom
+              w-full
+              h-full
+              object-cover
+            "
+          >
+
+        </div>
+
+        <div class="p-5">
+
+          <p class="text-xs text-greenwood-600">
+            MAY 24
+          </p>
+
+          <h3 class="mt-3 font-medium">
+            Story Time
+          </h3>
+
+          <p class="mt-2 text-xs text-gray-400">
+            11:00 AM · Children's Room
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- EVENT 3 -->
+
+      <article
+        class="
+          group
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          border
+          border-gray-100
+        "
+      >
+
+        <div class="h-44 overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=700&q=80"
+            alt="Community workshop"
+            class="
+              image-zoom
+              w-full
+              h-full
+              object-cover
+            "
+          >
+
+        </div>
+
+        <div class="p-5">
+
+          <p class="text-xs text-greenwood-600">
+            JUNE 02
+          </p>
+
+          <h3 class="mt-3 font-medium">
+            Creative Workshop
+          </h3>
+
+          <p class="mt-2 text-xs text-gray-400">
+            3:00 PM · Community Hall
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- EVENT 4 -->
+
+      <article
+        class="
+          group
+          overflow-hidden
+          rounded-2xl
+          bg-white
+          border
+          border-gray-100
+        "
+      >
+
+        <div class="h-44 overflow-hidden">
+
+          <img
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=700&q=80"
+            alt="Library discussion"
+            class="
+              image-zoom
+              w-full
+              h-full
+              object-cover
+            "
+          >
+
+        </div>
+
+        <div class="p-5">
+
+          <p class="text-xs text-greenwood-600">
+            JUNE 08
+          </p>
+
+          <h3 class="mt-3 font-medium">
+            Local Authors Evening
+          </h3>
+
+          <p class="mt-2 text-xs text-gray-400">
+            7:00 PM · Main Hall
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer
+  class="
+    bg-gray-900
+    text-white
+    py-12
+  "
+>
+
+  <div
+    class="
+      max-w-7xl
+      mx-auto
+      px-6
+      lg:px-10
+    "
+  >
+
+    <div
+      class="
+        grid
+        sm:grid-cols-2
+        lg:grid-cols-4
+        gap-10
+      "
+    >
+
+
+      <!-- BRAND -->
+
+      <div>
+
+        <h3 class="text-lg font-medium">
+          Greenwood
+        </h3>
+
+        <p
+          class="
+            mt-4
+            text-xs
+            leading-5
+            text-gray-400
+          "
+        >
+          Your neighbourhood library
+          since 1983.
+        </p>
+
+      </div>
+
+
+      <!-- PAGES -->
+
+      <div>
+
+        <h4 class="text-xs">
+          Pages
+        </h4>
+
+        <div
+          class="
+            mt-4
+            space-y-3
+            text-xs
+            text-gray-400
+          "
+        >
+
+          <a
+            href="#sections"
+            class="block hover:text-greenwood-300 transition"
+          >
+            Sections
+          </a>
+
+          <a
+            href="#gallery"
+            class="block hover:text-greenwood-300 transition"
+          >
+            Gallery
+          </a>
+
+          <a
+            href="#membership"
+            class="block hover:text-greenwood-300 transition"
+          >
+            Membership
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- DETAILS -->
+
+      <div>
+
+        <h4 class="text-xs">
+          Details
+        </h4>
+
+        <div
+          class="
+            mt-4
+            space-y-3
+            text-xs
+            text-gray-400
+          "
+        >
+
+          <p>125 Greenwood Avenue</p>
+
+          <p>Mon – Fri · 9 AM – 8 PM</p>
+
+          <p>Sat – Sun · 10 AM – 6 PM</p>
+
+        </div>
+
+      </div>
+
+
+      <!-- SOCIAL -->
+
+      <div>
+
+        <h4 class="text-xs">
+          Follow us
+        </h4>
+
+        <div class="flex gap-3 mt-4">
+
+          <a
+            href="#"
+            class="
+              w-9
+              h-9
+              rounded-full
+              border
+              border-gray-700
+              grid
+              place-items-center
+              text-xs
+              hover:bg-greenwood-600
+              transition
+            "
+          >
+            f
+          </a>
+
+          <a
+            href="#"
+            class="
+              w-9
+              h-9
+              rounded-full
+              border
+              border-gray-700
+              grid
+              place-items-center
+              text-xs
+              hover:bg-greenwood-600
+              transition
+            "
+          >
+            i
+          </a>
+
+          <a
+            href="#"
+            class="
+              w-9
+              h-9
+              rounded-full
+              border
+              border-gray-700
+              grid
+              place-items-center
+              text-xs
+              hover:bg-greenwood-600
+              transition
+            "
+          >
+            X
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="
+        mt-10
+        pt-6
+        border-t
+        border-gray-800
+        text-[10px]
+        text-gray-500
+      "
+    >
+
+      © 2026 Greenwood Public Library.
+      All rights reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
