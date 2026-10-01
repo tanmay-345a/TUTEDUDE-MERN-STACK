@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+}
+
+h1 {
+    color: darkblue;
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+    color: #333;
+}
+
+nav {
+    margin-bottom: 30px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 18px;
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #333;
+}
